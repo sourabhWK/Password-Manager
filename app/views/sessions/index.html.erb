@@ -1,0 +1,21 @@
+<h1>User Home </h1>
+
+<ul>
+  <% if Current.user %>
+    <li>
+      user email : <%= Current.user.email %>
+    </li>
+    <li>
+      <%= button_to "Logout", logout_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to "Sign up", sign_up_path %>
+    </li>
+    <li>
+      <%= link_to "Login", sign_in_path %>
+    </li>
+  <% end %>
+
+</ul>
+<br>
